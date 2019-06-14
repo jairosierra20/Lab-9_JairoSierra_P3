@@ -46,7 +46,7 @@ int main()
              << "9. Confirmar o Cancelar ordenes" << endl
              << "10. Crear archivo" << endl
              << "11. Salir" << endl;
-        cout << "Ingrese una opcion: " << endl;
+             cout<<"Ingrese una opcion: "<<endl;
         cin >> opcion;
         switch (opcion)
         {
@@ -345,7 +345,7 @@ void ConfirmarOrdenes()
     cout << "INgrese la posicion de la orden: " << endl;
     int pos = 0;
     cin >> pos;
-    pos = pos - 1;
+    pos=pos-1;
     switch (opc)
     {
     case 1:
@@ -362,12 +362,12 @@ void Archivo()
 {
     for (int i = 0; i < proceso.size(); i++)
     {
-        if (proceso[i]->getProceso() == "Confirmado" || proceso[i]->getProceso() == "Cancelado")
+        if (proceso[i]->getProceso()=="Confirmado" || proceso[i]->getProceso()=="Cancelado")
         {
-
-            string numero_orden = to_string(i + 1);
+        
+            string numero_orden = to_string(i+1);
             string nombre = "Factura" + numero_orden + ".txt";
-            cout << nombre << endl;
+            cout<<nombre<<endl;
             ofstream file;
             file.open(nombre, ios::out);
             file << "Registro de Hugo" << endl;
@@ -393,6 +393,6 @@ void Archivo()
             file.close();
         }
     }
-
+    
     cout << "Se creo exitosamente" << endl;
 }
