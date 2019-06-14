@@ -356,14 +356,14 @@ void ConfirmarOrdenes()
     default:
         break;
     }
-    proceso.erase(proceso.begin()+pos);
     terminadas.push_back(proceso[pos]);
+    proceso.erase(proceso.begin()+pos);
 }
 void Archivo()
 {
-    for (int i = 0; i < proceso.size(); i++)
+    for (int i = 0; i < terminadas.size(); i++)
     {
-        if (proceso[i]->getProceso()=="Confirmado" || proceso[i]->getProceso()=="Cancelado")
+        if (terminadas[i]->getProceso()=="Confirmado" || terminadas[i]->getProceso()=="Cancelado")
         {
         
             string numero_orden = to_string(i+1);
@@ -374,23 +374,23 @@ void Archivo()
             file << "Registro de Hugo" << endl;
             file << "Factura " + numero_orden << endl;
             file << "*******************************" << endl;
-            file << numero_orden + "- Orden: Cliente: Nombre: " + proceso[i]->getCliente()->getNombre() << endl;
-            file << " Direccion: " + proceso[i]->getCliente()->getDireccion() << endl;
-            file << " Numero de telefono: " + proceso[i]->getCliente()->getTelefono() << endl;
-            file << " Tarjeta: " + proceso[i]->getCliente()->getTarjeta() << endl;
-            file << " Pedidos: " + proceso[i]->getCliente()->getPedidos() << endl;
-            file << " Repartidor: Nombre: " + proceso[i]->getRepartidor()->getNombre() << endl;
-            file << " Id: " + proceso[i]->getRepartidor()->getId() << endl;
-            file << " Edad: " + proceso[i]->getRepartidor()->getEdad() << endl;
+            file << numero_orden + "- Orden: Cliente: Nombre: " + terminadas[i]->getCliente()->getNombre() << endl;
+            file << " Direccion: " + terminadas[i]->getCliente()->getDireccion() << endl;
+            file << " Numero de telefono: " + terminadas[i]->getCliente()->getTelefono() << endl;
+            file << " Tarjeta: " + terminadas[i]->getCliente()->getTarjeta() << endl;
+            file << " Pedidos: " + terminadas[i]->getCliente()->getPedidos() << endl;
+            file << " Repartidor: Nombre: " + terminadas[i]->getRepartidor()->getNombre() << endl;
+            file << " Id: " + terminadas[i]->getRepartidor()->getId() << endl;
+            file << " Edad: " + terminadas[i]->getRepartidor()->getEdad() << endl;
             file << " Placa: " + proceso[i]->getRepartidor()->getPlaca() << endl;
-            file << " Ordenes atendidas: " + proceso[i]->getRepartidor()->getAtendidas() << endl;
-            file << " Negocio: Nombre: " + proceso[i]->getNegocio()->getNombre() << endl;
-            file << " Ubicacion: " + proceso[i]->getNegocio()->getUbicacion() << endl;
-            file << " Locales: " + proceso[i]->getNegocio()->getLocales() << endl;
-            file << " Producto: Nombre: " + proceso[i]->getProducto()->getNombre() << endl;
-            file << " Tipo: " + proceso[i]->getProducto()->getTipo() << endl;
-            file << " Tipo de la orden: " + proceso[i]->getTipo() << endl;
-            file << " Estado de la orden: " << proceso[i]->getProceso() << endl;
+            file << " Ordenes atendidas: " + terminadas[i]->getRepartidor()->getAtendidas() << endl;
+            file << " Negocio: Nombre: " + terminadas[i]->getNegocio()->getNombre() << endl;
+            file << " Ubicacion: " + terminadas[i]->getNegocio()->getUbicacion() << endl;
+            file << " Locales: " + terminadas[i]->getNegocio()->getLocales() << endl;
+            file << " Producto: Nombre: " + terminadas[i]->getProducto()->getNombre() << endl;
+            file << " Tipo: " + terminadas[i]->getProducto()->getTipo() << endl;
+            file << " Tipo de la orden: " + terminadas[i]->getTipo() << endl;
+            file << " Estado de la orden: " << terminadas[i]->getProceso() << endl;
             file.close();
         }
     }
