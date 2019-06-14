@@ -1,0 +1,20 @@
+Registro de Hugo
+Factura 1
+*******************************
+1- Orden: Cliente: Nombre: jairo
+ Direccion: 1
+ Numero de telefono: 1
+ Tarjeta: 1
+edidos: 
+ Repartidor: Nombre: tiffany
+ Id: 1
+Edad: 
+ Placa: 1
+rdenes atendidas: 
+ Negocio: Nombre: burger
+ Ubicacion: a
+Locales: 
+ Producto: Nombre: 1
+ Tipo: Comestible
+ Tipo de la orden: Comestible
+ Estado de la orden: Confirmado
