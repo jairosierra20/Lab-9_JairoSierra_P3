@@ -356,7 +356,7 @@ void ConfirmarOrdenes()
     default:
         break;
     }
-    personas.erase(personas.begin()+pos);
+    proceso.erase(proceso.begin()+pos);
     terminadas.push_back(proceso[pos]);
 }
 void Archivo()
